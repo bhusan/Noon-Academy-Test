@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="baseFragment"
+            type="non.app.noon.academy.base.BaseFragment" />
+
+        <variable
+            name="subjectHandler"
+            type="non.app.noon.academy.base.SubjectHandler" />
+
+        <variable
+            name="subjectModel"
+            type="non.app.noon.academy.model.SubjectModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter title"
+                android:text="@={subjectModel.title}" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter subject"
+                android:text="@={subjectModel.description}" />
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="@{() -> subjectHandler.chooseImage(baseFragment)}"
+            bind:imageUrl="@{subjectModel.imageUrl}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> subjectHandler.saveSubject(baseFragment,subjectModel)}"
+            android:text="save" />
+    </LinearLayout>
+
+</layout>

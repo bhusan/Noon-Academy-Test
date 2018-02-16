@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "197167936205",
+    "project_id": "noon-academy-1518662617651"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197167936205:android:1a14d5d475f8302a",
+        "android_client_info": {
+          "package_name": "app.noon.academy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197167936205-f8hlfqlj84pq8vsl0fng4125pago3gap.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "197167936205-qh2rmef434kd5dls19gm046ns8lvu2h2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.noon.academy",
+            "certificate_hash": "c6c6ca9be06622ccdfc241ce5a554bafc27f2ec7"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbpftLayAy7l0pjEEvc7GVzyxzt3_pfJ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

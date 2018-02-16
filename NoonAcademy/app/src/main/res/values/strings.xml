@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Noon Academy</string>
+    <string name="title_home">Home</string>
+    <string name="title_add_subject">Add Subject</string>
+    <string name="title_draw">Draw</string>
+    <integer name="DATABASE_VERSION">1</integer>
+</resources>
