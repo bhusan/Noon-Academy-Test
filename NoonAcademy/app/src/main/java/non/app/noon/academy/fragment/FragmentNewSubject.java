@@ -56,7 +56,6 @@ public class FragmentNewSubject extends BaseFragment implements AddSubject {
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == Constants.PICK_IMAGE_REQUEST & resultCode == Activity.RESULT_OK) {
@@ -67,7 +66,6 @@ public class FragmentNewSubject extends BaseFragment implements AddSubject {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public String getRealPathFromURI(Context context, Uri contentUri) {
         String filePath = "";
         String wholeID = DocumentsContract.getDocumentId(contentUri);

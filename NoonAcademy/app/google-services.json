@@ -13,16 +13,24 @@
       },
       "oauth_client": [
         {
-          "client_id": "197167936205-f8hlfqlj84pq8vsl0fng4125pago3gap.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
           "client_id": "197167936205-qh2rmef434kd5dls19gm046ns8lvu2h2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "app.noon.academy",
             "certificate_hash": "c6c6ca9be06622ccdfc241ce5a554bafc27f2ec7"
           }
+        },
+        {
+          "client_id": "197167936205-6qurvakqtno9ac9vc6vfchul2p1sohoi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.noon.academy",
+            "certificate_hash": "ccd187d424123df931cfaa5f6d7d28ef9078b6c3"
+          }
+        },
+        {
+          "client_id": "197167936205-f8hlfqlj84pq8vsl0fng4125pago3gap.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
