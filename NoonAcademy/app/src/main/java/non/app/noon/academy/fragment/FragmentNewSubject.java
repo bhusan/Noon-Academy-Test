@@ -67,21 +67,29 @@ public class FragmentNewSubject extends BaseFragment implements AddSubject {
 
 
     public String getRealPathFromURI(Context context, Uri contentUri) {
-        String filePath = "";
-        String wholeID = DocumentsContract.getDocumentId(contentUri);
-
-        // Split at colon, use second item in the array
-        String id = wholeID.split(":")[1];
-
         String[] column = {MediaStore.Images.Media.DATA};
 
-        // where id is equal to
-        String sel = MediaStore.Images.Media._ID + "=?";
+        Cursor cursor = null;
+        int columnIndex = 0;
 
-        Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                column, sel, new String[]{id}, null);
+        String filePath = "";
+        String wholeID = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            wholeID = DocumentsContract.getDocumentId(contentUri);
+            // Split at colon, use second item in the array
+            String id = wholeID.split(":")[1];
+            // where id is equal to
+            String sel = MediaStore.Images.Media._ID + "=?";
 
-        int columnIndex = cursor.getColumnIndex(column[0]);
+            cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                    column, sel, new String[]{id}, null);
+
+            columnIndex = cursor.getColumnIndex(column[0]);
+        } else {
+            cursor = getActivity().managedQuery(contentUri, column, null, null, null);
+            getActivity().startManagingCursor(cursor);
+            columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        }
 
         if (cursor.moveToFirst()) {
             filePath = cursor.getString(columnIndex);
